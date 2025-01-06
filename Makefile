@@ -1,4 +1,4 @@
 build:
-	@gcc rat.c -o rat
+	@gcc rat.c -o bin/rat
 run:
-	make build && ./rat $(file)
+	make build && ./bin/rat $(file)
