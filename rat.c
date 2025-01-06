@@ -4,6 +4,7 @@
 
 #define RESET_COLOR "\033[0m"
 #define GREEN       "\033[32m"
+#define MAX_BUFFER  1025
 
 bool file_exists(const char *filename) {
   FILE *fp = fopen(filename, "r");
@@ -20,7 +21,7 @@ bool file_exists(const char *filename) {
 int main(int argc, char *argv[]) {
   char *filepath = argv[1];
   FILE *file_contents;
-  char line[100];
+  char line[MAX_BUFFER];
 
   if (!file_exists(filepath)) {
     printf("The file cannot be read.");
@@ -30,7 +31,7 @@ int main(int argc, char *argv[]) {
 
   printf("%s%s%s\n\n", GREEN, filepath, RESET_COLOR);
   file_contents = fopen(filepath, "r");
-  while (fgets(line, 100, file_contents) != NULL) {
+  while (fgets(line, MAX_BUFFER, file_contents) != NULL) {
     printf("%s", line);
   }
 
