@@ -19,7 +19,7 @@ int main(int argc, char *argv[]) {
 
   printf("Hello, I am rat. You asked me to recite the file: %s\n\n", filepath);
   
-  if (!file_exists(argv[1])) {
+  if (!file_exists(filepath)) {
     printf("The file cannot be read.");
 
     return EXIT_FAILURE;
