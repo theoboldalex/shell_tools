@@ -20,7 +20,7 @@ bool file_exists(const char *filename) {
 int main(int argc, char *argv[]) {
   char *filepath = argv[1];
   FILE *file_contents;
-  char line[10];
+  char line[100];
 
   if (!file_exists(filepath)) {
     printf("The file cannot be read.");
@@ -30,7 +30,7 @@ int main(int argc, char *argv[]) {
 
   printf("%s%s%s\n\n", GREEN, filepath, RESET_COLOR);
   file_contents = fopen(filepath, "r");
-  while (fgets(line, 10, file_contents) != NULL) {
+  while (fgets(line, 100, file_contents) != NULL) {
     printf("%s", line);
   }
 
