@@ -29,7 +29,7 @@ int main(int argc, char *argv[]) {
     return EXIT_FAILURE;
   }
 
-  
+  printf("Hello, I am rat. You asked me to recite the file: %s\n", argv[1]);
 
   return EXIT_SUCCESS;
 }
